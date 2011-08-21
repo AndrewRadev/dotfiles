@@ -1,0 +1,14 @@
+! keycode 22  = BackSpace
+! keycode 107 = Delete
+! keycode 127 = Control_R
+! keycode 125 = Control_L
+
+! remove Lock = Caps_Lock
+! remove Control = Control_L
+! keysym Control_L = Caps_Lock
+! keysym Caps_Lock = Control_L
+! add Lock = Caps_Lock
+! add Control = Control_L
+
+keycode 135 = F13
+add Control = F13
