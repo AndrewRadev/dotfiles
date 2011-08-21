@@ -4,10 +4,12 @@ def file_mapping
     ['~/.Xmodmap',           'home/Xmodmap'],
     ['~/.xinitrc',           'home/xinitrc'],
     ['~/archive/Xdefaults',  'archive/Xdefaults'],
+    ['~/.ncmpcpp/config',    'home/ncmpcpp_config'],
     ['~/.pentadactylrc',     'home/pentadactylrc'],
     ['~/.vimperatorrc',      'home/vimperatorrc'],
     ['~/.ctags',             'home/ctags'],
-    ['/etc/X11/xorg.conf.d', 'etc/xorg.conf.d']
+    ['/etc/X11/xorg.conf.d', 'etc/xorg.conf.d'],
+    ['/etc/mpd.conf',        'etc/mpd.conf'],
   ].map do |pair|
     pair.map { |file| File.expand_path(file) }
   end
