@@ -9,11 +9,11 @@ def file_mapping
 end
 
 def local_files
-  file_mapping.map(&:first)
+  file_mapping.map { |f| f[0] }
 end
 
 def stored_files
-  file_mapping.map(&:second)
+  file_mapping.map { |f| f[1] }
 end
 
 def timestamp
@@ -58,7 +58,7 @@ end
 
 task :put => :backup do
   file_mapping.each do |local, stored|
-    if File.exists? local
+    if File.exists? stored
       cp stored, local
     else
       warn "> Couldn't find #{stored}"
