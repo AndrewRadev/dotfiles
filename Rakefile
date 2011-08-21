@@ -54,6 +54,7 @@ end
 task :take do
   file_mapping.each do |local, stored|
     if File.exists? local
+      rm_rf stored if File.exists? stored
       cp_r local, stored
     else
       warn "> Couldn't find #{local}"
@@ -64,9 +65,7 @@ end
 task :put => :backup do
   file_mapping.each do |local, stored|
     if File.exists? stored
-      if File.exists? local
-        rm_rf local
-      end
+      rm_rf local if File.exists? local
       cp_r stored, local
     else
       warn "> Couldn't find #{stored}"
