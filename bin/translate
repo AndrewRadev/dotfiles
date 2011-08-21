@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'net/http'
+require 'json'
+require 'cgi'
+
+def usage
+  puts "USAGE: translate <from> <to> <text>"
+  exit(1)
+end
+
+def translate(text, from, to)
+  q        = CGI::escape(text)
+  lang     = CGI::escape("#{from}|#{to}")
+  uri      = "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=#{q}&langpair=#{lang}"
+  response = Net::HTTP.get URI.parse(uri)
+
+  data = JSON.parse(response)['responseData']
+  data['translatedText'] if data
+end
+
+usage if ARGV.size < 3
+
+to   = ARGV.shift
+from = ARGV.shift
+text = ARGV.join ' '
+
+puts translate(text, from, to)

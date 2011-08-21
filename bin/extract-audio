@@ -1,0 +1,8 @@
+#! /bin/sh
+
+set -e
+
+input=${1?}
+output=${input%.*}.mp3
+
+ffmpeg -i "$input" -vn -ar 44100 -ac 2 -ab 192000 -f mp3 "$output"

@@ -1,0 +1,41 @@
+#! /bin/sh
+
+set -e
+
+dir=/mnt/backup/`date +'%Y_%m_%d'`
+
+mkdir -p $dir
+
+# Configuration directories
+
+rsync -av /home/andrew/.config    $dir
+rsync -av /home/andrew/.filezilla $dir
+rsync -av /home/andrew/.mozilla   $dir
+rsync -av /home/andrew/.ssh       $dir
+
+# Configuration files
+
+rsync -av /home/andrew/.ctags         $dir
+rsync -av /home/andrew/.gitconfig     $dir
+rsync -av /home/andrew/.gmrunrc       $dir
+rsync -av /home/andrew/.irbrc         $dir
+rsync -av /home/andrew/.netrc         $dir
+rsync -av /home/andrew/.pentadactylrc $dir
+rsync -av /home/andrew/.Xdefaults     $dir
+rsync -av /home/andrew/.xinitrc       $dir
+rsync -av /home/andrew/.Xmodmap       $dir
+
+# Standard home directories
+
+rsync -av /home/andrew/archive   $dir
+rsync -av /home/andrew/bin       $dir
+rsync -av /home/andrew/books     $dir
+rsync -av /home/andrew/clips     $dir
+rsync -av /home/andrew/downloads $dir
+rsync -av /home/andrew/images    $dir
+rsync -av /home/andrew/lib       $dir
+rsync -av /home/andrew/movies    $dir
+rsync -av /home/andrew/music     $dir
+rsync -av /home/andrew/projects  $dir
+rsync -av /home/andrew/series    $dir
+rsync -av /home/andrew/tags      $dir

@@ -1,0 +1,3 @@
+#! /bin/bash
+
+bash < <( curl https://rvm.beginrescueend.com/releases/rvm-install-head )

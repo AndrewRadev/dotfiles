@@ -1,0 +1,37 @@
+#! /usr/bin/env ruby
+
+require 'matrix'
+
+def fill_matrix n, m
+  rows = []
+  n.times do
+    row = []
+    m.times { row << rand(13) }
+    rows << row
+  end
+
+  Matrix[*rows]
+end
+
+def print_matrix(io, m)
+  io.puts m.row_vectors
+end
+
+i = 2 + rand(3)
+j = 2 + rand(3)
+k = 2 + rand(3)
+
+left  = fill_matrix(i, j)
+right = fill_matrix(j, k)
+
+
+File.open '/tmp/input_matrices', 'w' do |f|
+  print_matrix(f, left)
+  f.puts
+  print_matrix(f, right)
+end
+
+File.open '/tmp/output_matrix', 'w' do |f|
+  result = left * right
+  print_matrix(f, result)
+end
