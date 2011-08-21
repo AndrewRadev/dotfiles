@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# background
+eval `cat $HOME/.fehbg`
+
+# an icon tray for Xmonad
+# trayer --edge bottom --align right --SetDockType true --SetPartialStrut true --expand true \
+# --width 10 --height 20 --transparent true --alpha 0 --tint 0x000000 &
+
+# composite management
+xcompmgr &
+# cairo-compmgr &
+
+autokey-gtk &
+skype &
+dropboxd &
+# transmission-gtk &
+(sleep 10 && qgmailnotifier) &
+
+# set up keymaps:
+xmodmap .Xmodmap
+
+exec awesome
+
+# exec ck-launch-session gnome-session
+# exec startkde
+# exec startxfce4
+# exec icewm
+# exec openbox
+# exec blackbox
+# exec fluxbox
+# exec ratpoison
+# exec dwm

@@ -2,6 +2,7 @@ def file_mapping
   [
     ['~/.Xdefaults',         'home/Xdefaults'],
     ['~/.Xmodmap',           'home/Xmodmap'],
+    ['~/.xinitrc',           'home/xinitrc'],
     ['~/archive/Xdefaults',  'archive/Xdefaults'],
     ['~/.pentadactylrc',     'home/pentadactylrc'],
     ['~/.vimperatorrc',      'home/vimperatorrc'],
