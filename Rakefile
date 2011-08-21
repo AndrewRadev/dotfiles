@@ -3,6 +3,9 @@ def file_mapping
     ['~/.Xdefaults',        'home/Xdefaults'],
     ['~/.Xmodmap',          'home/Xmodmap'],
     ['~/archive/Xdefaults', 'archive/Xdefaults'],
+    ['~/.pentadactylrc',    'home/pentadactylrc'],
+    ['~/.vimperatorrc',     'home/vimperatorrc'],
+    ['~/.ctags',            'home/ctags'],
   ].map do |pair|
     pair.map { |file| File.expand_path(file) }
   end

@@ -1,0 +1,37 @@
+" vim: ft=vimperator
+
+set complete=l
+set followhints=1
+set newtab=all
+set! browser.startup.page=1
+set defsearch='g'
+
+" faster scrolling:
+noremap j 5j
+noremap k 5k
+noremap h 5h
+noremap l 5l
+
+noremap J 10j
+noremap K 10k
+
+" faster quit
+noremap QQ :quit<cr>
+
+" move through tabs:
+noremap <C-Left> gT
+noremap <C-Right> gt
+noremap <C-h> gT
+noremap <C-l> gt
+
+" shift toolbar up and down:
+noremap <C-j> :set guioptions+=BmT<cr>
+noremap <C-k> :set guioptions-=BmT<cr>
+
+" firebug:
+noremap gn <F12>
+
+" faster gmail
+noremap gm t http://gmail.com<cr>
+
+noremap e :emenu<space>
