@@ -51,12 +51,14 @@ def basename(file)
   File.basename(file)
 end
 
+desc "Show all stored files"
 task :list do
   FileList['*/**'].each do |file|
     puts file
   end
 end
 
+desc "Create a backup in ~/dotfiles_backup with all files currently in place"
 task :backup do
   backup_dir = prepare_dir "~/dotfiles_backup/#{timestamp}"
   local_files.each do |file|
@@ -64,6 +66,7 @@ task :backup do
   end
 end
 
+desc "Take the files from the machine and copy them to storage"
 task :take do
   file_mapping.each do |local, stored|
     if File.exists? local
@@ -75,6 +78,7 @@ task :take do
   end
 end
 
+desc "Take the files from storage and copy them locally"
 task :put => :backup do
   file_mapping.each do |local, stored|
     if File.exists? stored
