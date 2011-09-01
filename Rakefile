@@ -8,6 +8,7 @@ def file_mapping
     ['~/.pentadactylrc',            'home/pentadactylrc'],
     ['~/.vimperatorrc',             'home/vimperatorrc'],
     ['~/.ctags',                    'home/ctags'],
+    ['~/.ackrc',                    'home/ackrc'],
     ['~/.config/user-dirs.dirs',    'home/config_user_dirs.dirs'],
     ['~/.rvm/gemsets/default.gems', 'home/rvm_default_gems'],
     ['~/bin/backup',                'bin/backup'],
