@@ -1,7 +1,7 @@
 URxvt*urgentOnBell: true
 
 URxvt*depth: 32
-URxvt*background: rgba:0000/0000/0000/dddd
+URxvt*background: rgba:0000/0000/0000/efef
 URxvt*foreground: #ffffff
 
 ! black
@@ -37,6 +37,7 @@ URxvt*scrollBar_right: true
 
 !URxvt*font: xft:Andale Mono:size=13:antialias=true
 URxvt*font: -xos4-terminus-medium-*-*-*-16-*-*-*-*-*-*-u
+URxvt*boldFont: -xos4-terminus-bold-*-*-*-16-*-*-*-*-*-*-u
 !URxvt*font: xft:Terminus:size=12:antialias=false
 
 URxvt*intensityStyles: false

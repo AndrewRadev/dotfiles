@@ -1,1 +1,5 @@
 --type-add=ruby=.haml,.slim,.rake,.ru
+--type-add=css=.scss
+--type-set=cucumber=.feature
+--type-set=slim=.slim
+--type-set=coffee=.coffee

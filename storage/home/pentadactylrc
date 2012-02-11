@@ -6,32 +6,39 @@ set newtab=all
 set! browser.startup.page=1
 set defsearch='g'
 
-" faster scrolling:
-noremap j 5j
-noremap k 5k
-noremap h 5h
-noremap l 5l
+nnoremap <C-1> :tabfirst<cr>
+nnoremap <C-9> :tablast<cr>
 
-noremap J 10j
-noremap K 10k
+" faster scrolling:
+nnoremap j 5j
+nnoremap k 5k
+nnoremap h 5h
+nnoremap l 5l
+
+nnoremap J 10j
+nnoremap K 10k
 
 " faster quit
-noremap QQ :quit<cr>
+nnoremap QQ :quit<cr>
 
 " move through tabs:
-noremap <C-Left> gT
-noremap <C-Right> gt
-noremap <C-h> gT
-noremap <C-l> gt
+nnoremap <C-Left> gT
+nnoremap <C-Right> gt
+nnoremap <C-h> gT
+nnoremap <C-l> gt
 
 " shift toolbar up and down:
-noremap <C-j> :set guioptions+=BmT<cr>
-noremap <C-k> :set guioptions-=BmT<cr>
+nnoremap <C-j> :set guioptions+=BmT<cr>
+nnoremap <C-k> :set guioptions-=BmT<cr>
+
+" easier pasting
+cnoremap <c-p> <c-v><c-v>
+inoremap <c-p> <c-v><c-v>
 
 " firebug:
-noremap gn <F12>
+nnoremap gn <F12>
 
 " faster gmail
-noremap gm t http://gmail.com<cr>
+nnoremap gm t http://gmail.com<cr>
 
-noremap e :emenu<space>
+nnoremap e :emenu<space>

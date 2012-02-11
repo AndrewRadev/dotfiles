@@ -1,27 +1,25 @@
 #!/bin/sh
 
-# background
+# Wallpaper:
 eval `cat $HOME/.fehbg`
 
-# an icon tray for Xmonad
-# trayer --edge bottom --align right --SetDockType true --SetPartialStrut true --expand true \
-# --width 10 --height 20 --transparent true --alpha 0 --tint 0x000000 &
-
-# composite management
+# Composite management:
 xcompmgr &
-# cairo-compmgr &
 
-autokey-gtk &
+# Keyboard repeat rate:
+xset r rate 300 20
+
+# Applications:
+# autokey-gtk &
 skype &
-dropboxd &
-# transmission-gtk &
+dropbox &
+transmission-gtk --minimized &
 (sleep 10 && qgmailnotifier) &
 
-# set up keymaps:
-# xmodmap .Xmodmap
+# Hack for fixing graphic card issue
+sudo vgaswitch
 
 exec awesome
-
 # exec ck-launch-session gnome-session
 # exec startkde
 # exec startxfce4

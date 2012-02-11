@@ -4,22 +4,32 @@ set -e
 
 dir=/mnt/backup/`date +'%Y_%m_%d'`
 
-mkdir -p $dir
+if [ ! -d $dir ];
+then
+  mkdir -p $dir
+fi
 
 # Configuration directories
 
-rsync -av /home/andrew/.config    $dir
-rsync -av /home/andrew/.filezilla $dir
-rsync -av /home/andrew/.mozilla   $dir
-rsync -av /home/andrew/.ssh       $dir
+rsync -av /home/andrew/.config      $dir
+rsync -av /home/andrew/.filezilla   $dir
+rsync -av /home/andrew/.mozilla     $dir
+rsync -av /home/andrew/.ssh         $dir
+rsync -av /home/andrew/.local/share $dir
+
+# Game saves
+
+rsync -av /home/andrew/.Broken\ Rules/ $dir
+rsync -av /home/andrew/.Braid          $dir
+rsync -av /home/andrew/.Osmos          $dir
+rsync -av /home/andrew/.vvvvvv         $dir
 
 # Configuration files
 
 rsync -av /home/andrew/.ctags         $dir
 rsync -av /home/andrew/.gitconfig     $dir
-rsync -av /home/andrew/.gmrunrc       $dir
 rsync -av /home/andrew/.irbrc         $dir
-rsync -av /home/andrew/.netrc         $dir
+rsync -av /home/andrew/.rspec         $dir
 rsync -av /home/andrew/.pentadactylrc $dir
 rsync -av /home/andrew/.Xdefaults     $dir
 rsync -av /home/andrew/.xinitrc       $dir
@@ -38,4 +48,3 @@ rsync -av /home/andrew/movies    $dir
 rsync -av /home/andrew/music     $dir
 rsync -av /home/andrew/projects  $dir
 rsync -av /home/andrew/series    $dir
-rsync -av /home/andrew/tags      $dir
