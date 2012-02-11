@@ -1,4 +1,6 @@
 def file_mapping(root = getcwd)
+  root = File.expand_path(root)
+
   [
     ['~/.Xdefaults',                'home/Xdefaults'],
     ['~/.Xmodmap',                  'home/Xmodmap'],
@@ -68,7 +70,7 @@ end
 
 desc "Take the files from the machine and copy them to storage"
 task :take do
-  file_mapping.each do |local, stored|
+  file_mapping('./storage').each do |local, stored|
     if File.exists? local
       rm_rf stored if File.exists? stored
       copy_files local, stored
