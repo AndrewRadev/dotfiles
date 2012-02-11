@@ -1,4 +1,4 @@
-def file_mapping
+def file_mapping(root = getcwd)
   [
     ['~/.Xdefaults',                'home/Xdefaults'],
     ['~/.Xmodmap',                  'home/Xmodmap'],
@@ -23,7 +23,7 @@ def file_mapping
     ['/etc/X11/xorg.conf.d',        'etc/xorg.conf.d'],
     ['/etc/mpd.conf',               'etc/mpd.conf'],
   ].map do |pair|
-    pair.map { |file| File.expand_path(file) }
+    pair.map { |file| File.expand_path(file, root) }
   end
 end
 
@@ -39,6 +39,11 @@ def timestamp
   Time.now.strftime("%Y_%m_%d_%H%M%S")
 end
 
+def copy_files(source, destination)
+  prepare_dir(File.dirname(destination))
+  system "sudo cp -av #{source} #{destination}"
+end
+
 def prepare_dir(dir)
   dir = File.expand_path(dir)
   if not File.exists?(dir)
@@ -48,22 +53,16 @@ def prepare_dir(dir)
   dir
 end
 
-def basename(file)
-  File.basename(file)
-end
-
 desc "Show all stored files"
 task :list do
-  FileList['*/**'].each do |file|
-    puts file
-  end
+  FileList['*/**'].each { |file| puts file }
 end
 
 desc "Create a backup in ~/dotfiles_backup with all files currently in place"
 task :backup do
   backup_dir = prepare_dir "~/dotfiles_backup/#{timestamp}"
-  local_files.each do |file|
-    cp_r file, File.join(backup_dir, basename(file)) if File.exists?(file)
+  file_mapping(backup_dir).each do |local, stored|
+    copy_files local, stored if File.exists?(local)
   end
 end
 
@@ -72,7 +71,7 @@ task :take do
   file_mapping.each do |local, stored|
     if File.exists? local
       rm_rf stored if File.exists? stored
-      cp_r local, stored
+      copy_files local, stored
     else
       warn "> Couldn't find #{local}"
     end
@@ -84,7 +83,7 @@ task :put => :backup do
   file_mapping.each do |local, stored|
     if File.exists? stored
       rm_rf local if File.exists? local
-      cp_r stored, local
+      copy_files stored, local
     else
       warn "> Couldn't find #{stored}"
     end
