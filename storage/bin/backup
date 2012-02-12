@@ -15,7 +15,7 @@ rsync -av /home/andrew/.config      $dir
 rsync -av /home/andrew/.filezilla   $dir
 rsync -av /home/andrew/.mozilla     $dir
 rsync -av /home/andrew/.ssh         $dir
-rsync -av /home/andrew/.local/share $dir
+rsync -av /home/andrew/.local/share $dir/local_share
 
 # Game saves
 
