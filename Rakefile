@@ -29,14 +29,6 @@ def file_mapping(root = getcwd)
   end
 end
 
-def local_files
-  file_mapping.map { |f| f[0] }
-end
-
-def stored_files
-  file_mapping.map { |f| f[1] }
-end
-
 def timestamp
   Time.now.strftime("%Y_%m_%d_%H%M%S")
 end
