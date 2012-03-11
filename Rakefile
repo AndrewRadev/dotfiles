@@ -1,4 +1,4 @@
-def file_mapping(root = getcwd)
+def file_mapping(root = getwd)
   root = File.expand_path(root)
 
   [
@@ -74,7 +74,7 @@ end
 
 desc "Take the files from storage and copy them locally"
 task :put => :backup do
-  file_mapping.each do |local, stored|
+  file_mapping('./storage').each do |local, stored|
     if File.exists? stored
       rm_rf local if File.exists? local
       copy_files stored, local
