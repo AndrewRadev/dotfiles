@@ -26,14 +26,9 @@ rsync -av /home/andrew/.vvvvvv         $dir
 
 # Configuration files
 
-rsync -av /home/andrew/.ctags         $dir
-rsync -av /home/andrew/.gitconfig     $dir
-rsync -av /home/andrew/.irbrc         $dir
-rsync -av /home/andrew/.rspec         $dir
-rsync -av /home/andrew/.pentadactylrc $dir
-rsync -av /home/andrew/.Xdefaults     $dir
-rsync -av /home/andrew/.xinitrc       $dir
-rsync -av /home/andrew/.Xmodmap       $dir
+rsync -av /home/andrew/.gitconfig $dir
+rsync -av /home/andrew/.irbrc     $dir
+rsync -av /home/andrew/.rspec     $dir
 
 # Standard home directories
 

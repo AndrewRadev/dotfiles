@@ -6,18 +6,17 @@ eval `cat $HOME/.fehbg`
 # Composite management:
 xcompmgr &
 
+# Keymaps:
+xmodmap .Xmodmap
+
 # Keyboard repeat rate:
 xset r rate 300 20
 
 # Applications:
 # autokey-gtk &
-skype &
-dropbox &
-transmission-gtk --minimized &
-(sleep 10 && qgmailnotifier) &
-
-# Hack for fixing graphic card issue
-sudo vgaswitch
+(sleep 5 && transmission-gtk --minimized) &
+(sleep 10 && skype) &
+(sleep 15 && qgmailnotifier) &
 
 exec awesome
 # exec ck-launch-session gnome-session

@@ -3,3 +3,4 @@
 --type-set=cucumber=.feature
 --type-set=slim=.slim
 --type-set=coffee=.coffee
+--type-set=eco=.eco

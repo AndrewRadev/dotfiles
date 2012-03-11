@@ -1,5 +1,2 @@
-! keycode 135 = F13
-! add Control = F13
-
-! remove Control = Control_R
-! add Mod1 = Control_R
+keycode 135 = XF86New
+add Control = XF86New
