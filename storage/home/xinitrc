@@ -14,9 +14,13 @@ xset r rate 300 20
 
 # Applications:
 # autokey-gtk &
-(sleep 5 && transmission-gtk --minimized) &
-(sleep 10 && skype) &
-(sleep 15 && qgmailnotifier) &
+# (sleep 5 && transmission-gtk --minimized) &
+skype &
+dropboxd &
+
+if [ -d ~/Desktop ]; then
+  rmdir ~/Desktop
+fi
 
 exec awesome
 # exec ck-launch-session gnome-session

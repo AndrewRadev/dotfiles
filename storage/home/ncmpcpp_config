@@ -3,6 +3,25 @@
 ## ~/.ncmpcpp/config and set up your preferences  ##
 ####################################################
 #
+##### directories ######
+##
+## Directory for storing ncmpcpp related files.
+## Changing it is useful if you want to store
+## everything somewhere else and provide command
+## line setting for alternative location to config
+## file which defines that while launching ncmpcpp.
+##
+#
+#ncmpcpp_directory = "~/.ncmpcpp"
+#
+##
+## Directory for storing downloaded lyrics. It
+## defaults to ~/.lyrics since other MPD clients
+## (eg. ncmpc) also use that location.
+##
+#
+#lyrics_directory = "~/.lyrics"
+#
 ##### connection settings #####
 #
 ## set it in order to make tag editor and renaming files work properly
@@ -13,9 +32,9 @@ mpd_port = "6600"
 #
 mpd_music_dir = "/home/andrew/music"
 #
-mpd_connection_timeout = "5"
+#mpd_connection_timeout = "5"
 #
-mpd_crossfade_time = "5"
+#mpd_crossfade_time = "5"
 #
 #mpd_communication_mode = "notifications" (polling/notifications)
 #
@@ -23,18 +42,25 @@ mpd_crossfade_time = "5"
 ##
 ## Note: In order to make music visualizer work you'll
 ## need to use mpd fifo output, whose format parameter
-## has to be set to 44100:16:1. Example configuration:
-## (it has to be put into mpd.conf)
+## has to be set to 44100:16:1 for mono visualization
+## or 44100:16:2 for stereo visualization. Example
+## configuration (it has to be put into mpd.conf):
 ##
 ## audio_output {
 ##        type            "fifo"
 ##        name            "My FIFO"
 ##        path            "/tmp/mpd.fifo"
-##        format          "44100:16:1"
+##        format          "44100:16:2"
 ## }
 ##
 #
-#visualizer_fifo_path = "/tmp/mpd.fifo"
+##
+## If you set format to 44100:16:2, make it 'yes'.
+##
+#
+#visualizer_in_stereo = "no"
+#
+#visualizer_fifo_path = ""
 #
 ##
 ## Note: Below parameter is needed for ncmpcpp
@@ -61,7 +87,9 @@ mpd_crossfade_time = "5"
 ## you need to compile ncmpcpp with fftw3 support.
 ##
 #
-#visualizer_type = "spectrum" (spectrum/wave)
+#visualizer_type = "wave" (spectrum/wave)
+#
+#visualizer_look = "◆│"
 #
 ##### system encoding #####
 ##
@@ -84,7 +112,7 @@ mpd_crossfade_time = "5"
 #
 ## delay after playlist highlighting will be disabled (0 = don't disable)
 #
-playlist_disable_highlight_delay = "0"
+#playlist_disable_highlight_delay = "5"
 #
 ## defines how long various messages are supposed to be visible
 #
@@ -251,6 +279,8 @@ song_window_title_format = "{%a - }{%t}|{%f}"
 #
 #search_engine_display_mode = "classic" (classic/columns)
 #
+#playlist_editor_display_mode = "classic" (classic/columns)
+#
 #discard_colors_if_item_is_selected = "yes"
 #
 incremental_seeking = "yes"
@@ -297,6 +327,8 @@ cyclic_scrolling = "yes"
 #
 #follow_now_playing_lyrics = "no"
 #
+#fetch_lyrics_for_current_song_in_background = "no"
+#
 #store_lyrics_in_song_dir = "no"
 #
 ##
@@ -340,6 +372,15 @@ cyclic_scrolling = "yes"
 #screen_switcher_mode = "sequence: 2 -> 3"
 #
 ##
+## Default width of locked screen (in %).
+## Acceptable values are from 20 to 80.
+##
+#
+#locked_screen_width_part = "50"
+#
+#ask_for_locked_screen_width_part = "yes"
+#
+##
 ## Note: You can define startup screen for ncmpcpp
 ## by choosing screen number from the list above.
 ##
@@ -349,13 +390,13 @@ cyclic_scrolling = "yes"
 #
 #ask_before_clearing_main_playlist = "no"
 #
-clock_display_seconds = "no"
+#clock_display_seconds = "no"
 #
 #display_volume_level = "yes"
 #
 display_bitrate = "yes"
 #
-display_remaining_time = "no"
+#display_remaining_time = "no"
 #
 #regular_expressions = "basic" (basic/extended)
 #
@@ -377,6 +418,8 @@ display_remaining_time = "no"
 #tag_editor_extended_numeration = "no"
 #
 #media_library_display_date = "yes"
+#
+#media_library_display_empty_tag = "yes"
 #
 #media_library_disable_two_column_mode = "no"
 #
@@ -406,13 +449,13 @@ allow_physical_files_deletion = "yes"
 #
 allow_physical_directories_deletion = "yes"
 #
-#external_editor = "vim"
+external_editor = "vim"
 #
-use_console_editor = "yes" (set to yes, if your editor is console app)
+use_console_editor = "yes"
 #
 ##### colors definitions #####
 #
-colors_enabled = "yes"
+#colors_enabled = "yes"
 #
 empty_tag_color = "cyan"
 #
@@ -426,21 +469,23 @@ state_flags_color = "default"
 #
 main_window_color = "cyan"
 #
-color1 = "white"
+#color1 = "white"
 #
-color2 = "green"
+#color2 = "green"
 #
-main_window_highlight_color = "yellow"
+main_window_highlight_color = "cyan"
 #
-progressbar_color = "default"
+#progressbar_color = "default"
 #
-statusbar_color = "default"
+#statusbar_color = "default"
 #
 alternative_ui_separator_color = "white"
 #
-active_column_color = "red"
+#active_column_color = "red"
 #
-window_border_color = "green"
+#visualizer_color = "yellow"
 #
-active_window_border = "red"
+#window_border_color = "green"
+#
+#active_window_border = "red"
 #

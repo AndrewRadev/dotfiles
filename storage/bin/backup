@@ -2,12 +2,12 @@
 
 set -e
 
-dir=/mnt/backup/`date +'%Y_%m_%d'`
+dir=/mnt
 
-if [ ! -d $dir ];
-then
-  mkdir -p $dir
-fi
+# if [ ! -d $dir ];
+# then
+#   mkdir -p $dir
+# fi
 
 # Configuration directories
 
@@ -16,13 +16,6 @@ rsync -av /home/andrew/.filezilla   $dir
 rsync -av /home/andrew/.mozilla     $dir
 rsync -av /home/andrew/.ssh         $dir
 rsync -av /home/andrew/.local/share $dir/local_share
-
-# Game saves
-
-rsync -av /home/andrew/.Broken\ Rules/ $dir
-rsync -av /home/andrew/.Braid          $dir
-rsync -av /home/andrew/.Osmos          $dir
-rsync -av /home/andrew/.vvvvvv         $dir
 
 # Configuration files
 
@@ -42,4 +35,4 @@ rsync -av /home/andrew/lib       $dir
 rsync -av /home/andrew/movies    $dir
 rsync -av /home/andrew/music     $dir
 rsync -av /home/andrew/projects  $dir
-rsync -av /home/andrew/series    $dir
+# rsync -av /home/andrew/series    $dir
