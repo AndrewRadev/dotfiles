@@ -22,6 +22,10 @@ if [ -d ~/Desktop ]; then
   rmdir ~/Desktop
 fi
 
+if [ -d ~/tmp ]; then
+  rmdir ~/Desktop
+fi
+
 exec awesome
 # exec ck-launch-session gnome-session
 # exec startkde

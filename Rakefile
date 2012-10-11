@@ -11,6 +11,7 @@ def file_mapping(root = getwd)
     ['~/.vimperatorrc',             'home/vimperatorrc'],
     ['~/.ctags',                    'home/ctags'],
     ['~/.ackrc',                    'home/ackrc'],
+    ['~/.vimproj',                  'home/vimproj'],
     ['~/.config/user-dirs.dirs',    'home/config_user_dirs.dirs'],
     ['~/.rvm/gemsets/default.gems', 'home/rvm_default_gems'],
     ['~/bin/backup',                'bin/backup'],

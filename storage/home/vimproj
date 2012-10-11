@@ -1,0 +1,55 @@
+[inline_edit]
+path = /home/andrew/.vim/bundle/inline_edit
+vim = /home/andrew/.vim/bundle/inline_edit/_project.vim
+
+[sideways]
+path = /home/andrew/.vim/bundle/sideways
+vim = /home/andrew/.vim/bundle/sideways/_project.vim
+
+[vim-ruby]
+path = /home/andrew/.vim/bundle/ruby
+vim = /home/andrew/.vim/bundle/ruby/_project.vim
+
+[vimfiles]
+path = /home/andrew/.vim
+vim = /home/andrew/.vim/_project.vim
+
+[tradeo-web]
+path = /home/andrew/projects/tradeo/web
+vim = /home/andrew/projects/tradeo/web/_project.vim
+
+[splitjoin]
+path = /home/andrew/.vim/bundle/splitjoin
+vim = /home/andrew/.vim/bundle/splitjoin/_project.vim
+
+[dikov]
+path = /home/andrew/projects/dikov
+vim = /home/andrew/projects/dikov/_project.vim
+
+[vimrunner]
+path = /home/andrew/projects/vimrunner
+vim = /home/andrew/projects/vimrunner/_project.vim
+
+[switch]
+path = /home/andrew/.vim/bundle/switch
+vim = /home/andrew/.vim/bundle/switch/_project.vim
+
+[dot-shell]
+path = /home/andrew/.shell
+vim = /home/andrew/.shell/_project.vim
+
+[dawanda]
+path = /home/andrew/projects/dawanda
+vim = /home/andrew/projects/dawanda/_project.vim
+
+[waiting_on_rails]
+path = /home/andrew/projects/waiting_on_rails
+vim = /home/andrew/projects/waiting_on_rails/_project.vim
+
+[awesome]
+path = /home/andrew/.config/awesome
+vim = /home/andrew/.config/awesome/_project.vim
+
+[vim-eco]
+path = /home/andrew/.vim/bundle/eco
+vim = /home/andrew/.vim/bundle/eco/_project.vim
