@@ -23,7 +23,7 @@ def file_mapping(root = getwd)
     ['~/bin/sound',                 'bin/sound'],
     ['~/bin/translate',             'bin/translate'],
     ['~/bin/whenis',                'bin/whenis'],
-    ['/etc/X11/xorg.conf.d',        'etc/xorg.conf.d'],
+    ['/etc/X11/xorg.conf.d/',       'etc/xorg.conf.d/'],
     ['/etc/mpd.conf',               'etc/mpd.conf'],
   ].map do |pair|
     pair.map { |file| File.expand_path(file, root) }
