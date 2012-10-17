@@ -1,0 +1,9 @@
+#! /bin/zsh
+
+for branch in `git branch -a`; do
+  if [ $branch != "*" ]; then
+    hasAct=$(git log --abbrev-commit --date=relative -1 $branch);
+    lastActivity=$(echo "$hasAct" | grep Date: | sed 's/Date: //');
+    echo "$branch last activity was\033[1;31m$lastActivity\033[0m";
+  fi
+done

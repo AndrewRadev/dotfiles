@@ -1,0 +1,1 @@
+ip link set dev eth0 address 14:da:e9:19:96:f0

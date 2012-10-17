@@ -1,0 +1,5 @@
+#! /bin/sh
+
+new_filename=$(zenity --text="New filename" --entry-text="$1" --entry)
+convert_options=$(zenity --text="Convert options" --entry)
+convert $1 $convert_options $new_filename

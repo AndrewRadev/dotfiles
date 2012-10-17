@@ -1,0 +1,12 @@
+#! /usr/bin/env ruby
+
+require 'net/http'
+
+if not ARGV[0]
+  puts "USAGE: #{File.basename(__FILE__)} <text>"
+  exit(1)
+end
+
+q = URI.escape(ARGV.join(' '))
+
+system 'mplayer', '-really-quiet', "http://translate.google.com/translate_tts?ie=UTF-8uritl=en-us&q=#{q}"

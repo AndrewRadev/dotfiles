@@ -3,6 +3,6 @@
 set -e
 
 input=${1?}
-output=${input%.*}.ogg
+output=${input%.*}.wav
 
-ffmpeg -i "$input" -vn -ar 44100 -ac 2 -ab 192000 -f ogg "$output"
+ffmpeg -i "$input" -vn -ar 48000 -ac 2 "$output"

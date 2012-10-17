@@ -1,0 +1,34 @@
+#! /usr/bin/env python3
+
+import sys
+from PyQt4 import QtCore, QtGui, QtWebKit
+
+class Browser(QtGui.QMainWindow):
+    def __init__(self, query):
+        QtGui.QMainWindow.__init__(self)
+
+        self.central_widget = QtGui.QWidget(self)
+        self.frame          = QtGui.QFrame(self.central_widget)
+        self.web_view       = QtWebKit.QWebView()
+        self.main_layout    = QtGui.QHBoxLayout(self.central_widget)
+
+        self.main_layout.setSpacing(0)
+        self.main_layout.setMargin(1)
+        self.main_layout.addWidget(self.web_view)
+
+        self.setCentralWidget(self.central_widget)
+
+        self.web_view.load(QtCore.QUrl(query))
+        self.web_view.show()
+
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        query = sys.argv[1]
+    else:
+        query = 'http://google.com'
+
+    app  = QtGui.QApplication(sys.argv)
+    main = Browser(query)
+
+    main.show()
+    sys.exit(app.exec_())

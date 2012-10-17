@@ -14,10 +14,6 @@ vim = /home/andrew/.vim/bundle/ruby/_project.vim
 path = /home/andrew/.vim
 vim = /home/andrew/.vim/_project.vim
 
-[tradeo-web]
-path = /home/andrew/projects/tradeo/web
-vim = /home/andrew/projects/tradeo/web/_project.vim
-
 [splitjoin]
 path = /home/andrew/.vim/bundle/splitjoin
 vim = /home/andrew/.vim/bundle/splitjoin/_project.vim
@@ -53,3 +49,7 @@ vim = /home/andrew/.config/awesome/_project.vim
 [vim-eco]
 path = /home/andrew/.vim/bundle/eco
 vim = /home/andrew/.vim/bundle/eco/_project.vim
+
+[whitespaste]
+path = /home/andrew/.vim/bundle/whitespaste
+vim = /home/andrew/.vim/bundle/whitespaste/_project.vim

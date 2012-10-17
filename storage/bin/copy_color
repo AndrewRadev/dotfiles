@@ -1,0 +1,3 @@
+#! /bin/sh
+
+grabc | perl -ne 'chomp and print' | xclip -i

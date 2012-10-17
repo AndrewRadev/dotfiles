@@ -1,0 +1,12 @@
+#! /bin/sh
+
+# Polyphonic by .@sentibryan
+
+notes=CDEFGAB
+keys=asdfghj
+
+while read -n1 k
+do
+  x=$(tr $keys $notes <<< $k)
+  play -qn synth pl ${x}3 fade 0 .7 & > /dev/null
+done

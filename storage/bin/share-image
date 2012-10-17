@@ -1,0 +1,16 @@
+#! /bin/sh
+
+set -e
+
+if [ -z $1 ];
+then
+  echo "USAGE: share-image <image>"
+  exit 1
+fi
+
+filename=$1
+extension=${filename##*.}
+checksum=`md5sum $filename | cut -d' ' -f1`
+
+scp $filename andrewradev.com:/home/andrew/images/$checksum.$extension
+echo http://andrewradev.com/i/$checksum.$extension

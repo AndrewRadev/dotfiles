@@ -13,10 +13,9 @@ xmodmap .Xmodmap
 xset r rate 300 20
 
 # Applications:
-# autokey-gtk &
-# (sleep 5 && transmission-gtk --minimized) &
 skype &
-dropboxd &
+#transmission-gtk --minimized &
+#qgmailnotifier
 
 if [ -d ~/Desktop ]; then
   rmdir ~/Desktop
