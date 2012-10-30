@@ -9,6 +9,7 @@ def file_mapping(root = getwd)
     ['~/.ncmpcpp/config',           'home/ncmpcpp_config'],
     ['~/.pentadactylrc',            'home/pentadactylrc'],
     ['~/.vimperatorrc',             'home/vimperatorrc'],
+    ['~/.gitconfig',                'home/gitconfig'],
     ['~/.ctags',                    'home/ctags'],
     ['~/.ackrc',                    'home/ackrc'],
     ['~/.vimproj',                  'home/vimproj'],
