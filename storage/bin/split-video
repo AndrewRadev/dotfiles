@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ -z "$2" ]; then
+  echo Usage: $0 tsfile avifile
+  exit 3
+fi
+
+n=0
+input="$2"
+
+(while read beg end; do
+let n=$n+1
+let sz=$end-$beg
+
+name=$input.$n.split.avi
+echo ffmpeg -analyzeduration 50000000 -v verbose -y -i "$input" -acodec copy -ss $beg -t $sz -threads 6 -vcodec copy $name
+
+ done) < $1

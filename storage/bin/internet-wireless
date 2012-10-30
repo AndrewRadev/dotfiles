@@ -1,7 +1,9 @@
 #! /bin/sh
 
-/etc/rc.d/networkmanager start
-nm-applet > /dev/null 2>&1 &
+# /etc/rc.d/networkmanager start
+# nm-applet > /dev/null 2>&1 &
 
 # /etc/rc.d/wicd start
 # wicd-client --tray > /dev/null 2>&1 &
+
+netcfgGUI &
