@@ -22,11 +22,11 @@ if [ -d ~/Desktop ]; then
 fi
 
 if [ -d ~/tmp ]; then
-  rmdir ~/Desktop
+  rmdir ~/tmp
 fi
 
 exec awesome
-# exec ck-launch-session gnome-session
+# exec gnome-session
 # exec startkde
 # exec startxfce4
 # exec icewm

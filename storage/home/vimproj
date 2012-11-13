@@ -53,3 +53,23 @@ vim = /home/andrew/.vim/bundle/eco/_project.vim
 [whitespaste]
 path = /home/andrew/.vim/bundle/whitespaste
 vim = /home/andrew/.vim/bundle/whitespaste/_project.vim
+
+[multichange]
+path = /home/andrew/.vim/bundle/multichange
+vim = /home/andrew/.vim/bundle/multichange/_project.vim
+
+[paste_middleware]
+path = /home/andrew/.vim/bundle/paste_middleware
+vim = /home/andrew/.vim/bundle/paste_middleware/_project.vim
+
+[edit_archive]
+path = /home/andrew/.vim/bundle/edit_archive
+vim = /home/andrew/.vim/bundle/edit_archive/_project.vim
+
+[blog]
+path = /home/andrew/projects/blog
+vim = /home/andrew/projects/blog/_project.vim
+
+[linediff]
+path = /home/andrew/.vim/bundle/linediff
+vim = /home/andrew/.vim/bundle/linediff/_project.vim

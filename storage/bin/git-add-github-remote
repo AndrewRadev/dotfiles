@@ -1,0 +1,11 @@
+#! /bin/sh
+
+set -e
+
+if [[ $# < 2 ]]; then
+  echo "USAGE: git add-github-remote <remote-name> <username>/<repo>"
+  exit 1
+fi
+
+git remote add $1 https://github.com/$2.git
+git remote set-url --push $1 git@github.com:$2.git
