@@ -35,3 +35,5 @@
   insteadOf = wgh:
 [advice]
   statushints = false
+[push]
+  default = simple

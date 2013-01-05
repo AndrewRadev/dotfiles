@@ -34,10 +34,6 @@ vim = /home/andrew/.vim/bundle/switch/_project.vim
 path = /home/andrew/.shell
 vim = /home/andrew/.shell/_project.vim
 
-[dawanda]
-path = /home/andrew/projects/dawanda
-vim = /home/andrew/projects/dawanda/_project.vim
-
 [waiting_on_rails]
 path = /home/andrew/projects/waiting_on_rails
 vim = /home/andrew/projects/waiting_on_rails/_project.vim
@@ -73,3 +69,11 @@ vim = /home/andrew/projects/blog/_project.vim
 [linediff]
 path = /home/andrew/.vim/bundle/linediff
 vim = /home/andrew/.vim/bundle/linediff/_project.vim
+
+[daily_sites]
+path = /home/andrew/projects/daily_sites
+vim = /home/andrew/projects/daily_sites/_project.vim
+
+[control_center]
+path = /home/andrew/projects/control_center
+vim = /home/andrew/projects/control_center/_project.vim

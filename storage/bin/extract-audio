@@ -3,6 +3,6 @@
 set -e
 
 input=${1?}
-output=${input%.*}.wav
+output=${input%.*}.mp3
 
 ffmpeg -i "$input" -vn -ar 48000 -ac 2 "$output"
