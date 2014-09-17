@@ -1,0 +1,14 @@
+#! /bin/sh
+
+if [ -L vimrc_backup ]; then
+  echo "vimrc_backup file already present!"
+  exit 1
+fi
+
+if [ -d vimfiles_backup ]; then
+  echo "vimfiles_backup directory already present!"
+  exit 1
+fi
+
+mv .vim/ vimfiles_backup
+mv .vimrc vimrc_backup

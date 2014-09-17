@@ -14,8 +14,10 @@ xset r rate 300 20
 
 # Applications:
 skype &
-nm-applet &
+# pidgin &
+# nm-applet &
 dropboxd &
+kbdd
 #transmission-gtk --minimized &
 #qgmailnotifier
 

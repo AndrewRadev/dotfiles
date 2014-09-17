@@ -1,0 +1,3 @@
+#! /bin/sh
+
+exec cvlc screen:// ':screen-fps=30' ':input-slave=alsa://hw:1,0' ':live-caching=300' ':sout=#transcode{vcodec=h264,venc=x264,acodec=mp3}:duplicate{dst=std{mux=mp4,access=file,dst="screencast.mp4"}}'

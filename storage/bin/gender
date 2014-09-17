@@ -1,0 +1,40 @@
+#! /usr/bin/env ruby
+# encoding: utf-8
+#
+# A dictionary can be found from
+# http://www1.dict.cc/translation_file_request.php. Needs to be grepped for
+# "noun$" before usage.
+#
+
+if ARGV.length < 1 or ARGV.all? { |arg| arg =~ /^-/ }
+  puts 'USAGE: gender <Noun> [options]'
+  exit 1
+end
+
+noun = ARGV.first.
+  gsub('ae', 'ä').
+  gsub('oe', 'ö').
+  gsub('ue', 'ü').
+  gsub('Ae', 'Ä').
+  gsub('Oe', 'Ö').
+  gsub('Ue', 'Ü').
+  gsub('_ss', 'ß')
+
+verbose = ARGV.find { |arg| arg == '-v' || arg == '--verbose' }
+
+results = {}
+%x[egrep '^#{noun} ' ~/lib/german_nouns.txt].lines.each do |line|
+  word, meaning, _ = line.split("\t")
+  results[word] ||= []
+  results[word] << meaning
+end
+
+results.each do |word, meanings|
+  puts word
+
+  if verbose
+    meanings.each do |meaning|
+      puts "  #{meaning}"
+    end
+  end
+end

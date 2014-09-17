@@ -8,7 +8,6 @@ vim = /home/andrew/.vim/bundle/sideways/_project.vim
 
 [vim-ruby]
 path = /home/andrew/.vim/bundle/ruby
-vim = /home/andrew/.vim/bundle/ruby/_project.vim
 
 [vimfiles]
 path = /home/andrew/.vim
@@ -44,7 +43,6 @@ vim = /home/andrew/.config/awesome/_project.vim
 
 [vim-eco]
 path = /home/andrew/.vim/bundle/eco
-vim = /home/andrew/.vim/bundle/eco/_project.vim
 
 [whitespaste]
 path = /home/andrew/.vim/bundle/whitespaste
@@ -52,7 +50,6 @@ vim = /home/andrew/.vim/bundle/whitespaste/_project.vim
 
 [multichange]
 path = /home/andrew/.vim/bundle/multichange
-vim = /home/andrew/.vim/bundle/multichange/_project.vim
 
 [paste_middleware]
 path = /home/andrew/.vim/bundle/paste_middleware
@@ -74,6 +71,60 @@ vim = /home/andrew/.vim/bundle/linediff/_project.vim
 path = /home/andrew/projects/daily_sites
 vim = /home/andrew/projects/daily_sites/_project.vim
 
-[control_center]
-path = /home/andrew/projects/control_center
-vim = /home/andrew/projects/control_center/_project.vim
+[golang]
+path = /home/andrew/.vim/bundle/golang
+vim = /home/andrew/.vim/bundle/golang/_project.vim
+
+[vsnips]
+path = /home/andrew/.vim/bundle/vsnips
+
+[onchange]
+path = /home/andrew/.vim/bundle/onchange
+
+[android_music]
+path = /home/andrew/projects/android_music
+vim = /home/andrew/projects/android_music/_project.vim
+
+[evans]
+path = /home/andrew/projects/evans
+vim = /home/andrew/projects/evans/_project.vim
+
+[knowable]
+path = /home/andrew/projects/knowable
+vim = /home/andrew/projects/knowable/_project.vim
+
+[writable_search]
+path = /home/andrew/.vim/bundle/writable_search
+vim = /home/andrew/.vim/bundle/writable_search/_project.vim
+
+[android_notes]
+path = /home/andrew/projects/android_notes
+vim = /home/andrew/projects/android_notes/_project.vim
+
+[arduino_lolshield]
+path = /home/andrew/projects/arduino_lolshield
+vim = /home/andrew/projects/arduino_lolshield/_project.vim
+
+[undoquit]
+path = /home/andrew/.vim/bundle/undoquit
+vim = /home/andrew/.vim/bundle/undoquit/_project.vim
+
+[uri_mapper]
+path = /home/andrew/projects/uri_mapper
+vim = /home/andrew/projects/uri_mapper/_project.vim
+
+[knowable-ops]
+path = /home/andrew/projects/knowable-ops
+vim = /home/andrew/projects/knowable-ops/_project.vim
+
+[sparkasse_stats]
+path = /home/andrew/projects/sparkasse_stats
+vim = /home/andrew/projects/sparkasse_stats/_project.vim
+
+[projections]
+path = /home/andrew/.vim/bundle/projections
+vim = /home/andrew/.vim/bundle/projections/_project.vim
+
+[libmarks]
+path = /home/andrew/projects/libmarks
+vim = /home/andrew/projects/libmarks/_project.vim

@@ -35,10 +35,13 @@ URxvt*scrollBar: true
 URxvt*scrollstyle: plain
 URxvt*scrollBar_right: true
 
-!URxvt*font: xft:Andale Mono:size=13:antialias=true
-URxvt*font: -xos4-terminus-medium-*-*-*-16-*-*-*-*-*-*-u
-URxvt*boldFont: -xos4-terminus-bold-*-*-*-16-*-*-*-*-*-*-u
+!URxvt*font: xft:Andale Mono:size=12:antialias=true
+URxvt*font: -xos4-Terminus-medium-*-*-*-16-*-*-*-*-*-*-u
+URxvt*boldFont: -xos4-Terminus-bold-*-*-*-16-*-*-*-*-*-*-u
 !URxvt*font: xft:Terminus:size=12:antialias=false
+
+XLock.fontset: -xos4-terminus-medium-*-*-*-16-*-*-*-*-*-*-u
+XLock.planfontset: -xos4-terminus-medium-*-*-*-16-*-*-*-*-*-*-u
 
 URxvt*intensityStyles: false
 URxvt*loginShell: true

@@ -1,8 +1,2 @@
---type-add=ruby=.haml,.slim,.rake,.ru,.jbuilder
---type-add=css=.scss
---type-add=css=.less
---type-set=cucumber=.feature
---type-set=slim=.slim
---type-set=coffee=.coffee
---type-set=eco=.eco
---type-set=ejs=.ejs
+--ignore-file=match:tags
+--ignore-file=ext:tags

@@ -1,0 +1,11 @@
+#! /bin/sh
+
+pkill -f skype
+pkill -f pidgin
+pkill -f xcompmgr
+pkill -f dropbox
+sudo systemctl stop ntpd
+sudo systemctl stop postgresql
+sudo systemctl stop redis
+
+xfce4-power-manager &

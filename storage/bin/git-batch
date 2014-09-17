@@ -1,0 +1,23 @@
+#! /usr/bin/env ruby
+
+require 'fileutils'
+
+if ARGV.length < 2
+  puts "USAGE: git batch <operation> directories"
+  exit 1
+end
+
+operation = ARGV[0]
+dirs      = ARGV[1, ARGV.length]
+
+dirs.each do |dir|
+  next if not File.directory?(dir)
+  next if not File.exists?("#{dir}/.git")
+
+  FileUtils.cd(dir) do
+    results = `git #{operation}`
+    results.each_line do |line|
+      puts "#{dir} | #{line}"
+    end
+  end
+end

@@ -1,5 +1,0 @@
-#! /bin/sh
-
-pkill -f skype
-pkill -f dropbox
-pkill -f nm-applet

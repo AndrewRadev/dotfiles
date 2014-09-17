@@ -1,0 +1,24 @@
+#! /usr/bin/env ruby
+
+require 'active_support/core_ext/string/inflections'
+
+if ARGV.length < 1
+  puts "USAGE: #{File.basename(__FILE__)} <camelcased project name>"
+  exit 1
+end
+
+camelcased_name  = ARGV.first.camelcase
+underscored_name = ARGV.first.underscore
+
+def create_project(options)
+  arguments = options.map { |k, v| "--#{k} #{v}" }.join ' '
+  system "android create project #{arguments}"
+end
+
+create_project({
+  :target   => 3,
+  :name     => camelcased_name,
+  :path     => "~/projects/#{underscored_name}",
+  :activity => 'MainActivity',
+  :package  => "com.andrewradev.#{underscored_name}",
+})
