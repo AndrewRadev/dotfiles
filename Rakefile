@@ -57,7 +57,7 @@ end
 desc "Take the files from the machine and copy them to storage"
 task :take do
   file_mapping('./storage').each do |local, stored|
-    if File.exists? local
+    if File.exists?(local) && !File.symlink?(local)
       rm_rf stored if File.exists? stored
       copy_files local, stored
     else
