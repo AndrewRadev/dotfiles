@@ -1,0 +1,4 @@
+#! /bin/sh
+
+ssh Ferris './backup'
+scp -r 'Ferris:rust-backups/*' rust_course/backups/

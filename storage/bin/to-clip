@@ -1,0 +1,9 @@
+#! /usr/bin/env ruby
+
+require 'clipboard'
+
+if not system('which xclip > /dev/null 2> /dev/null')
+  raise "The `xclip` command was not found"
+end
+
+puts Clipboard.paste.inspect

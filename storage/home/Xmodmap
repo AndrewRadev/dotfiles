@@ -1,2 +1,4 @@
 keycode 135 = XF86New
 add Control = XF86New
+
+keycode 94 = Shift_L

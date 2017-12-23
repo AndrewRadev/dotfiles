@@ -1,35 +1,9 @@
 #!/bin/sh
 
-# Wallpaper:
-eval `cat $HOME/.fehbg`
+[ -f /etc/xprofile ] && source /etc/xprofile
+[ -f ~/.xprofile ] && source ~/.xprofile
 
-# Composite management:
-xcompmgr &
-
-# Keymaps:
-xmodmap .Xmodmap
-
-# Keyboard repeat rate:
-xset r rate 300 20
-
-# Applications:
-skype &
-# pidgin &
-# nm-applet &
-dropboxd &
-kbdd
-#transmission-gtk --minimized &
-#qgmailnotifier
-
-if [ -d ~/Desktop ]; then
-  rmdir ~/Desktop
-fi
-
-if [ -d ~/tmp ]; then
-  rmdir ~/tmp
-fi
-
-exec awesome
+# exec awesome --no-argb
 # exec gnome-session
 # exec startkde
 # exec startxfce4

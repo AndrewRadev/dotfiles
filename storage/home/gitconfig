@@ -6,28 +6,19 @@
 [include]
   path = .githubconfig
 [core]
-  editor = vim
+  editor       = vim
   excludesfile = /home/andrew/.gitignore
-  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-  autocrlf = input
-  safecrlf = warn
-  eol = lf
+  whitespace   = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  autocrlf     = input
+  safecrlf     = warn
+  eol          = lf
 [alias]
-  switch         = !legit switch \"$@\"
-  branches       = !legit branches
-  sprout         = !legit sprout \"$@\"
-  unpublish      = !legit unpublish \"$@\"
-  harvest        = !legit harvest \"$@\"
-  sync           = !legit sync \"$@\"
-  publish        = !legit publish \"$@\"
-  graft          = !legit graft \"$@\"
-  create-branch  = "!bash -c \"[[ $# = 1 ]] || echo Missing argument: new branch name && git push origin HEAD:$1 && git checkout -b $1 origin/$1\""
   delete-branch  = "!bash -c \"[[ $# = 1 ]] && git push origin :$1; git branch -d $1 || echo Missing argument: remote branch name\""
-  rm-orig        = "!bash -c \"find . -path '*.orig' | xargs rm\""
+  rm-orig        = "!bash -c \"git ls-files -z --others --exclude-standard **/*.orig *.orig | xargs -0 rm\""
   list-untracked = !git status -s | cut -d' ' -f 2
-  unstage        = reset HEAD --
   cleanup        = !git branch --merged master | grep -v 'master$' | xargs git branch -d
-  co             = checkout
+  checkout-pr    = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr"
+  up             = pull --rebase --autostash
 [rerere]
   enabled = 1
 [push]
@@ -37,13 +28,11 @@
   tool = vimdiff
 [help]
   autocorrect = 1
-[url "git://github.com/"]
-  insteadOf = gh:
-[url "git@github.com:"]
-  insteadOf = wgh:
 [advice]
   statushints = false
 [github]
   user = AndrewRadev
 [branch]
   autosetuprebase = always
+[fetch]
+  prune = true

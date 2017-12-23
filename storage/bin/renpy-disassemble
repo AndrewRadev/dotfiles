@@ -1,0 +1,88 @@
+#!/usr/bin/python2
+# Disassemble a RenPy .rpyc file.
+# Adam Sampson <ats@offog.org>
+
+# Run this from the game directory, so it can find the game's version of renpy.
+import sys
+import os
+sys.path.insert(0, os.getcwd())
+
+import cPickle
+import renpy.ast as ast
+import renpy.object
+
+def dump_expr(expr):
+	return repr(expr)
+
+def dump_imspec(imspec):
+	if imspec is None:
+		return "None"
+	return " ".join(imspec[0]) + " # " + repr(imspec[1:])
+
+def dump_block(stmts, indent=0):
+	if stmts is None:
+		return
+
+	def quote(s):
+		return '"' + s + '"'
+	def line(s, offset=1):
+		print (" " * ((indent + offset) * 4)) + s.encode("UTF-8")
+
+	for s in stmts:
+		if isinstance(s, ast.EarlyPython):
+			for ln in s.code.source.rstrip().split("\n"):
+				line("early$ " + ln)
+		elif isinstance(s, ast.Hide):
+			line("hide " + dump_imspec(s.imspec))
+		elif isinstance(s, ast.Label):
+			line("label " + s.name + ":", -1)
+			line("# block = " + repr(s.block))
+			line("# parameters = " + repr(s.parameters))
+		elif isinstance(s, ast.Menu):
+			line("menu:", -1)
+			line("# set = " + repr(s.set))
+			for label, condition, block in s.items:
+				line(quote(label) + ":")
+				line("# condition = " + repr(condition))
+				dump_block(block, indent + 1)
+		elif isinstance(s, ast.Python):
+			for ln in s.code.source.rstrip().split("\n"):
+				line("$ " + ln)
+		elif isinstance(s, ast.Return):
+			if s.expression is None:
+				line("return")
+			else:
+				line("return " + dump_expr(s.expression))
+		elif isinstance(s, ast.Say):
+			if s.who is None:
+				line(quote(s.what))
+			else:
+				line(s.who + ' ' + quote(s.what))
+		elif isinstance(s, ast.Scene):
+			line("scene " + dump_imspec(s.imspec) + " " + repr(s.layer))
+		elif isinstance(s, ast.Show):
+			line("show " + dump_imspec(s.imspec))
+		elif isinstance(s, ast.UserStatement):
+			line(s.line)
+		elif isinstance(s, ast.With):
+			line("with " + s.expr)
+		else:
+			# If it's one we don't recognise, diff_info is usually pretty readable.
+			line(str(s.diff_info()))
+
+def dump_script(fn):
+	print "# Disassembled from " + fn
+	print
+
+	f = open(fn, "rb")
+	data, stmts = cPickle.loads(f.read().decode("zlib"))
+	f.close()
+
+	print "# Data: " + repr(data)
+	print
+
+	dump_block(stmts)
+	print
+
+for fn in sys.argv[1:]:
+	dump_script(fn)

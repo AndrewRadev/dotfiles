@@ -1,0 +1,16 @@
+#! /bin/sh
+
+set -e
+
+if [[ $# -lt 1 ]]; then
+  echo "USAGE: playlist <playlist-name>"
+  exit 1
+fi
+
+playlist=$1
+
+mpc clear > /dev/null
+mpc load $playlist > /dev/null
+mpc play > /dev/null
+
+ncmpcpp

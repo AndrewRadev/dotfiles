@@ -33,16 +33,9 @@ vim = /home/andrew/.vim/bundle/switch/_project.vim
 path = /home/andrew/.shell
 vim = /home/andrew/.shell/_project.vim
 
-[waiting_on_rails]
-path = /home/andrew/projects/waiting_on_rails
-vim = /home/andrew/projects/waiting_on_rails/_project.vim
-
 [awesome]
 path = /home/andrew/.config/awesome
 vim = /home/andrew/.config/awesome/_project.vim
-
-[vim-eco]
-path = /home/andrew/.vim/bundle/eco
 
 [whitespaste]
 path = /home/andrew/.vim/bundle/whitespaste
@@ -50,14 +43,6 @@ vim = /home/andrew/.vim/bundle/whitespaste/_project.vim
 
 [multichange]
 path = /home/andrew/.vim/bundle/multichange
-
-[paste_middleware]
-path = /home/andrew/.vim/bundle/paste_middleware
-vim = /home/andrew/.vim/bundle/paste_middleware/_project.vim
-
-[edit_archive]
-path = /home/andrew/.vim/bundle/edit_archive
-vim = /home/andrew/.vim/bundle/edit_archive/_project.vim
 
 [blog]
 path = /home/andrew/projects/blog
@@ -71,15 +56,8 @@ vim = /home/andrew/.vim/bundle/linediff/_project.vim
 path = /home/andrew/projects/daily_sites
 vim = /home/andrew/projects/daily_sites/_project.vim
 
-[golang]
-path = /home/andrew/.vim/bundle/golang
-vim = /home/andrew/.vim/bundle/golang/_project.vim
-
 [vsnips]
 path = /home/andrew/.vim/bundle/vsnips
-
-[onchange]
-path = /home/andrew/.vim/bundle/onchange
 
 [android_music]
 path = /home/andrew/projects/android_music
@@ -89,42 +67,48 @@ vim = /home/andrew/projects/android_music/_project.vim
 path = /home/andrew/projects/evans
 vim = /home/andrew/projects/evans/_project.vim
 
-[knowable]
-path = /home/andrew/projects/knowable
-vim = /home/andrew/projects/knowable/_project.vim
-
 [writable_search]
 path = /home/andrew/.vim/bundle/writable_search
 vim = /home/andrew/.vim/bundle/writable_search/_project.vim
-
-[android_notes]
-path = /home/andrew/projects/android_notes
-vim = /home/andrew/projects/android_notes/_project.vim
-
-[arduino_lolshield]
-path = /home/andrew/projects/arduino_lolshield
-vim = /home/andrew/projects/arduino_lolshield/_project.vim
 
 [undoquit]
 path = /home/andrew/.vim/bundle/undoquit
 vim = /home/andrew/.vim/bundle/undoquit/_project.vim
 
-[uri_mapper]
-path = /home/andrew/projects/uri_mapper
-vim = /home/andrew/projects/uri_mapper/_project.vim
-
-[knowable-ops]
-path = /home/andrew/projects/knowable-ops
-vim = /home/andrew/projects/knowable-ops/_project.vim
-
-[sparkasse_stats]
-path = /home/andrew/projects/sparkasse_stats
-vim = /home/andrew/projects/sparkasse_stats/_project.vim
-
-[projections]
-path = /home/andrew/.vim/bundle/projections
-vim = /home/andrew/.vim/bundle/projections/_project.vim
-
 [libmarks]
 path = /home/andrew/projects/libmarks
 vim = /home/andrew/projects/libmarks/_project.vim
+
+[libmarks-frontend]
+path = /home/andrew/projects/libmarks/frontend
+vim = /home/andrew/projects/libmarks/frontend/_project.vim
+
+[reachora/legacy]
+path = /home/andrew/projects/reachora/legacy
+vim = /home/andrew/projects/reachora/legacy/_project.vim
+
+[reachora/ui]
+path = /home/andrew/projects/reachora/ui
+vim = /home/andrew/projects/reachora/ui/_project.vim
+
+[reachora/api]
+path = /home/andrew/projects/reachora/api
+vim = /home/andrew/projects/reachora/api/_project.vim
+
+[reachora/video-server]
+path = /home/andrew/projects/reachora/video-server
+
+[reachora/email-sender]
+path = /home/andrew/projects/reachora/email-sender/
+vim = /home/andrew/projects/reachora/email-sender/_project.vim
+
+[reachora/dashboard]
+path = /home/andrew/projects/reachora/dashboard/
+vim = /home/andrew/projects/reachora/dashboard/_project.vim
+
+[reachora/rutherford]
+path = /home/andrew/projects/reachora/rutherford/
+vim = /home/andrew/projects/reachora/rutherford/_project.vim
+
+[reachora/overview]
+path = /home/andrew/projects/reachora/overview/

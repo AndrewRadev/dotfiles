@@ -1,3 +1,0 @@
-#! /bin/sh
-
-mplayer -ao alsa:noblock:device=hw=1.0 "$*"

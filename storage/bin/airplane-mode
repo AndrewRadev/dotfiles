@@ -1,11 +1,14 @@
 #! /bin/sh
 
 pkill -f skype
+pkill -f skypeforlinux
 pkill -f pidgin
-pkill -f xcompmgr
+# pkill -f xcompmgr
 pkill -f dropbox
-sudo systemctl stop ntpd
+pkill -f nm-applet
+# sudo systemctl stop ntpd
 sudo systemctl stop postgresql
 sudo systemctl stop redis
+sudo systemctl stop NetworkManager
 
 xfce4-power-manager &

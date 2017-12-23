@@ -29,6 +29,8 @@ results = {}
   results[word] << meaning
 end
 
+puts results.inspect
+
 results.each do |word, meanings|
   puts word
 

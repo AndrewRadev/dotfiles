@@ -1,0 +1,4 @@
+#! /bin/sh
+
+urxvt -e vimproj rust-scratch &
+sh -c "cd /home/andrew/projects/rust-scratch && urxvt" &

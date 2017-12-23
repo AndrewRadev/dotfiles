@@ -4,10 +4,12 @@ set newtab=all
 set! browser.startup.page=1
 set defsearch='g'
 set focuscontent
-set gui=noaddons,nobookmarks,menu,nonavigation,tabs
+set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
 
-highlight CmdLine    color: white; background: black; -moz-transition: all 0.25s;
-highlight StatusLine color: black; background: transparent; font-weight: normal;
+highlight CmdLine    color: white; background: black; -moz-transition: all 0.25s; font-size: 16px;
+highlight StatusLine color: black; background: transparent; font-weight: normal; font-size: 16px;
+
+highlight CompItem -append font-size: 16px;
 
 nmap <C-1> :tabfirst<cr>
 nmap <C-9> :tablast<cr>
@@ -32,14 +34,14 @@ noremap <C-l> gt
 
 " shift toolbar up and down:
 noremap <C-j> :set gui=noaddons,bookmarks,menu,navigation,tabs<cr>
-noremap <C-k> :set gui=noaddons,nobookmarks,menu,nonavigation,tabs<cr>
+noremap <C-k> :set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs<cr>
 
 " easier pasting
-cnoremap <c-p> <c-v><c-v>
-inoremap <c-p> <c-v><c-v>
+cnoremap <c-p> <c-v>
+inoremap <c-p> <c-v>
 
-" firebug:
-noremap gn <F12>
+" inspector:
+noremap go <C-S-i>
 
 " faster gmail
 noremap gm t http://gmail.com<cr>

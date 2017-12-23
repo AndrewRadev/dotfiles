@@ -1,0 +1,5 @@
+#! /bin/sh
+
+# Requires the "slop" command
+
+bash -c 'read -r G < <(slop -f "%g");import -window root -crop $G $(date +%s).png'

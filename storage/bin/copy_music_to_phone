@@ -1,3 +1,0 @@
-#! /bin/sh
-
-randfiles --size-limit 5GB | xargs -d'\n' -i sudo rsync -Rr --delete {} /mnt/Music

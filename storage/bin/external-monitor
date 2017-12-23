@@ -1,0 +1,4 @@
+#! /bin/sh
+
+xrandr --output eDP1 --mode 1368x768
+xrandr --output HDMI1 --auto

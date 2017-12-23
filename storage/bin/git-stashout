@@ -1,0 +1,10 @@
+#! /bin/sh
+
+set -e
+
+if [[ $# < 1 ]]; then
+  echo "USAGE: git stashout <branch>"
+  exit 1
+fi
+
+git stash && git checkout $1 && git stash pop
