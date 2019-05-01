@@ -1,0 +1,2 @@
+libinput:name:*ETPS/2 Elantech Touchpad:dmi:*svnAcer:pnAspireV3-372*
+LIBINPUT_ATTR_PRESSURE_RANGE=10:8
