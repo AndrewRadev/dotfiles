@@ -4,6 +4,7 @@
 
 --regex-ruby=/^[ \t]*scope[ \t]*:([a-zA-Z0-9_]+)/\1/r,scope,activerecord scope/
 --regex-ruby=/^[ \t]*([A-Z_][A-Z0-9_]*)[ \t]*=/\1/s,const,static constant/
+--regex-ruby=/^[ \t]*RSpec::Matchers\.define[ \t]+:([a-zA-Z0-9_]+)/\1/f,method/
 
 --langdef=coffee
 --langmap=coffee:.coffee
