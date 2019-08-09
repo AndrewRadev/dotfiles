@@ -13,6 +13,7 @@ def file_mapping(root = getwd)
     ['~/.ctags',                    'home/ctags'],
     ['~/.ackrc',                    'home/ackrc'],
     ['~/.vimproj',                  'home/vimproj'],
+    ['~/.inputrc',                  'home/inputrc'],
     ['~/.config/user-dirs.dirs',    'home/config_user_dirs.dirs'],
     ['~/.rvm/gemsets/default.gems', 'home/rvm_default_gems'],
     ['~/bin/',                      'bin/'],
