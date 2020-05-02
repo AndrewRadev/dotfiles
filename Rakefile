@@ -15,6 +15,7 @@ def file_mapping(root = getwd)
     ['~/.inputrc',                            'home/inputrc'],
     ['~/.irbrc',                              'home/irbrc'],
     ['~/.config/user-dirs.dirs',              'home/config_user_dirs.dirs'],
+    ['~/.config/fontconfig/fonts.conf',       'home/config_fontconfig/fonts.conf'],
     ['~/bin/',                                'bin/'],
     ['/etc/lightdm/lightdm.conf',             'etc/lightdm/lightdm.conf'],
     ['/etc/lightdm/lightdm-gtk-greeter.conf', 'etc/lightdm/lightdm-gtk-greeter.conf'],
