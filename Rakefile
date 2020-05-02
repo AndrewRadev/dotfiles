@@ -14,6 +14,7 @@ def file_mapping(root = getwd)
     ['~/.ackrc',                    'home/ackrc'],
     ['~/.vimproj',                  'home/vimproj'],
     ['~/.inputrc',                  'home/inputrc'],
+    ['~/.irbrc',                    'home/irbrc'],
     ['~/.config/user-dirs.dirs',    'home/config_user_dirs.dirs'],
     ['~/.rvm/gemsets/default.gems', 'home/rvm_default_gems'],
     ['~/bin/',                      'bin/'],

@@ -14,9 +14,6 @@
 --regex-coffee=/^[ \t]*(module\.)?(exports\.)?([A-Za-z.]+)[ \t]+=.*[-=]>.*$/\3/f,function/
 --regex-coffee=/^[ \t]*([A-Za-z.]+)[ \t]+=[^->\n]*$/\1/v,variable/
 
---regex-javascript=/^[ \t]*([A-Za-z]+)[ \t]*\(/\1/f,function/
---regex-javascript=/^[ \t]*([A-Za-z]+)[ \t]*:[ \t]*function[ \t]\(/\1/f,function/
-
 # --langdef=Go
 # --langmap=Go:.go
 # --regex-Go=/func([ \t]+\([^)]+\))?[ \t]+([a-zA-Z0-9_]+)/\2/f,func/
@@ -34,27 +31,25 @@
 # --regex-Rust=/^[ \t]*(pub[ \t]+)?trait[ \t]+([a-zA-Z0-9_]+)/\2/t,traits,traits/
 # --regex-Rust=/^[ \t]*macro_rules![ \t]+([a-zA-Z0-9_]+)/\1/d,macros,macro definitions/
 
---langdef=scss
---langmap=scss:.scss
---regex-scss=/@mixin[ \t]+([a-zA-Z0-9_-]+)/\1/m,mixin/
+# --langdef=scss
+# --langmap=scss:.scss
+# --regex-scss=/@mixin[ \t]+([a-zA-Z0-9_-]+)/\1/m,mixin/
 
 # Regex for Kotlin
---langdef=kotlin
---langmap=kotlin:+.kt
---langmap=kotlin:+.kts
---regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy|inner|open)[[:space:]]*)*(private[^ ]*|protected)?[[:space:]]*class[[:space:]]+([[:alnum:]_:]+)/\4/c,classes/
---regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy)[[:space:]]*)*(private[^ ]*|protected)?[[:space:]]*object[[:space:]]+([[:alnum:]_:]+)/\4/o,objects/
---regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy|open)[[:space:]]*)*(private[^ ]*|protected)?[[:space:]]*((abstract|final|sealed|implicit|lazy)[[:space:]]*)*data class[[:space:]]+([[:alnum:]_:]+)/\6/d,data classes/
---regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy)[[:space:]]*)*(private[^ ]*|protected)?[[:space:]]*interface[[:space:]]+([[:alnum:]_:]+)/\4/i,interfaces/
---regex-kotlin=/^[[:space:]]*type[[:space:]]+([[:alnum:]_:]+)/\1/T,types/
---regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy|override|open|private[^ ]*(\[[a-z]*\])*|protected)[[:space:]]*)*fun[[:space:]]+([[:alnum:]_:]+)/\4/m,methods/
---regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy|override|private[^ ]*|protected)[[:space:]]*)*(const[[:space:]])*val[[:space:]]+([[:alnum:]_]+)/\4/C,constants/
---regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy|override|private[^ ]*|protected)[[:space:]]*)*(lateinit[[:space:]]*)*var[[:space:]]+([[:alnum:]_]+)/\4/v,variables/
---regex-kotlin=/^[[:space:]]*package[[:space:]]+([[:alnum:]_.:]+)/\1/p,packages/
---regex-kotlin=/^[[:space:]]*import[[:space:]]+([[:alnum:]_.:]+)/\1/I,imports/
+# --langdef=kotlin
+# --langmap=kotlin:+.kt
+# --langmap=kotlin:+.kts
+# --regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy|inner|open)[[:space:]]*)*(private[^ ]*|protected)?[[:space:]]*class[[:space:]]+([[:alnum:]_:]+)/\4/c,classes/
+# --regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy)[[:space:]]*)*(private[^ ]*|protected)?[[:space:]]*object[[:space:]]+([[:alnum:]_:]+)/\4/o,objects/
+# --regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy|open)[[:space:]]*)*(private[^ ]*|protected)?[[:space:]]*((abstract|final|sealed|implicit|lazy)[[:space:]]*)*data class[[:space:]]+([[:alnum:]_:]+)/\6/d,data classes/
+# --regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy)[[:space:]]*)*(private[^ ]*|protected)?[[:space:]]*interface[[:space:]]+([[:alnum:]_:]+)/\4/i,interfaces/
+# --regex-kotlin=/^[[:space:]]*type[[:space:]]+([[:alnum:]_:]+)/\1/T,types/
+# --regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy|override|open|private[^ ]*(\[[a-z]*\])*|protected)[[:space:]]*)*fun[[:space:]]+([[:alnum:]_:]+)/\4/m,methods/
+# --regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy|override|private[^ ]*|protected)[[:space:]]*)*(const[[:space:]])*val[[:space:]]+([[:alnum:]_]+)/\4/C,constants/
+# --regex-kotlin=/^[[:space:]]*((abstract|final|sealed|implicit|lazy|override|private[^ ]*|protected)[[:space:]]*)*(lateinit[[:space:]]*)*var[[:space:]]+([[:alnum:]_]+)/\4/v,variables/
+# --regex-kotlin=/^[[:space:]]*package[[:space:]]+([[:alnum:]_.:]+)/\1/p,packages/
+# --regex-kotlin=/^[[:space:]]*import[[:space:]]+([[:alnum:]_.:]+)/\1/I,imports/
 
 --exclude=.git
---exclude=node_modules
---exclude=bower_components
 --exclude=target
 --exclude=tmp

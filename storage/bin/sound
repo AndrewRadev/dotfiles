@@ -1,3 +1,0 @@
-#! /bin/sh
-
-amixer set 'Master' $1 unmute | sed -e '/[1-9]\+%/!d' -e 's/.*\[\([1-9]\+%\)\].*/\1/'

@@ -17,7 +17,9 @@ URxvt*foreground: #ffffff
 ! URxvt*font: xft:Andale Mono:size=12:antialias=true
 !URxvt*font: -xos4-Terminus-medium-*-*-*-12-*-*-*-*-*-*-u
 !URxvt*boldFont: -xos4-Terminus-bold-*-*-*-12-*-*-*-*-*-*-u
-URxvt*font: xft:xos4 Terminus:size=11:antialias=false
+! URxvt*font: xft:xos4 Terminus:size=11:antialias=false,xft:Symbola,xft:Noto Emoji
+! URxvt*font: xft:Iosevka:size=11:antialias=false,xft:Symbola,xft:Noto Emoji
+URxvt*font: xft:Fantasque Sans Mono:size=11:antialias=false,xft:Symbola,xft:Noto Emoji
 
 ! black
 URxvt*color0:  #000000

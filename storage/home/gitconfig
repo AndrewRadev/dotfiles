@@ -16,7 +16,6 @@
   delete-branch  = "!bash -c \"[[ $# = 1 ]] && git push origin :$1; git branch -d $1 || echo Missing argument: remote branch name\""
   rm-orig        = "!bash -c \"git ls-files -z --others --exclude-standard **/*.orig *.orig | xargs -0 rm\""
   list-untracked = !git status -s | cut -d' ' -f 2
-  cleanup        = !git branch --merged master | grep -v 'master$' | xargs git branch -d
   checkout-pr    = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr"
   up             = pull --rebase --autostash
 [rerere]
@@ -34,5 +33,8 @@
   user = AndrewRadev
 [branch]
   autosetuprebase = always
+  sort = -authordate
 [fetch]
   prune = true
+[diff]
+	noprefix = true

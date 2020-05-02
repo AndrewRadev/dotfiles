@@ -1,0 +1,38 @@
+#! /bin/sh
+
+set -e
+
+if [[ $# -lt 1 ]]; then
+  echo "USAGE: copy-music <file.mp3> [<file.mp3> ...]"
+  exit 1
+fi
+
+phone=/mnt/phone/Internal\ shared\ storage/Music
+local=/home/andrew/music
+playlist=~/.mpd/playlists/everything.m3u
+
+echo "Checking for $local..."
+if ! [ -d "$local" ]; then
+  echo "Local music dir not found"
+  exit 1
+fi
+
+echo "Checking for $phone..."
+if ! [ -d "$phone" ]; then
+  echo "Phone not mounted"
+  exit 1
+fi
+
+for file in "$@"; do
+  echo "Working on $file"...
+  echo -n "  > "
+  cp -v "$file" "$phone/$file"
+
+  echo -n "  > "
+  cp -v "$file" "$local/$file"
+
+  if [ -f $playlist ]; then
+    echo "  > Adding to 'everything' playlist..."
+    echo "$local/$file" >> "$playlist"
+  fi
+done

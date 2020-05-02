@@ -17,10 +17,6 @@ vim = /home/andrew/.vim/_project.vim
 path = /home/andrew/.vim/bundle/splitjoin
 vim = /home/andrew/.vim/bundle/splitjoin/_project.vim
 
-[dikov]
-path = /home/andrew/projects/dikov
-vim = /home/andrew/projects/dikov/_project.vim
-
 [vimrunner]
 path = /home/andrew/projects/vimrunner
 vim = /home/andrew/projects/vimrunner/_project.vim
@@ -56,13 +52,6 @@ vim = /home/andrew/.vim/bundle/linediff/_project.vim
 path = /home/andrew/projects/daily_sites
 vim = /home/andrew/projects/daily_sites/_project.vim
 
-[vsnips]
-path = /home/andrew/.vim/bundle/vsnips
-
-[android_music]
-path = /home/andrew/projects/android_music
-vim = /home/andrew/projects/android_music/_project.vim
-
 [evans]
 path = /home/andrew/projects/evans
 vim = /home/andrew/projects/evans/_project.vim
@@ -74,41 +63,3 @@ vim = /home/andrew/.vim/bundle/writable_search/_project.vim
 [undoquit]
 path = /home/andrew/.vim/bundle/undoquit
 vim = /home/andrew/.vim/bundle/undoquit/_project.vim
-
-[libmarks]
-path = /home/andrew/projects/libmarks
-vim = /home/andrew/projects/libmarks/_project.vim
-
-[libmarks-frontend]
-path = /home/andrew/projects/libmarks/frontend
-vim = /home/andrew/projects/libmarks/frontend/_project.vim
-
-[reachora/legacy]
-path = /home/andrew/projects/reachora/legacy
-vim = /home/andrew/projects/reachora/legacy/_project.vim
-
-[reachora/ui]
-path = /home/andrew/projects/reachora/ui
-vim = /home/andrew/projects/reachora/ui/_project.vim
-
-[reachora/api]
-path = /home/andrew/projects/reachora/api
-vim = /home/andrew/projects/reachora/api/_project.vim
-
-[reachora/video-server]
-path = /home/andrew/projects/reachora/video-server
-
-[reachora/email-sender]
-path = /home/andrew/projects/reachora/email-sender/
-vim = /home/andrew/projects/reachora/email-sender/_project.vim
-
-[reachora/dashboard]
-path = /home/andrew/projects/reachora/dashboard/
-vim = /home/andrew/projects/reachora/dashboard/_project.vim
-
-[reachora/rutherford]
-path = /home/andrew/projects/reachora/rutherford/
-vim = /home/andrew/projects/reachora/rutherford/_project.vim
-
-[reachora/overview]
-path = /home/andrew/projects/reachora/overview/

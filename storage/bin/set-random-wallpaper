@@ -1,0 +1,29 @@
+#! /usr/bin/env ruby
+
+if ARGV.count < 1
+  STDERR.puts "USAGE: set-random-wallpaper <directory> [<directory>...]"
+  exit 1
+end
+
+require 'pathname'
+
+images = []
+ARGV.each do |input|
+  dir = Pathname.new(input)
+  if not dir.directory?
+    STDERR.puts "Not a directory: #{dir}"
+    exit 1
+  end
+
+  images += dir.glob('*.{jpg,png,jpeg}').to_a
+  images += dir.glob('**/*.{jpg,png,jpeg}').to_a
+end
+
+images = images.uniq
+
+if not system('which feh > /dev/null 2> /dev/null')
+  STDERR.puts "Didn't find the `feh` executable"
+  exit 1
+end
+
+system('feh', '--bg-scale', images.sample.to_s) or raise "Setting the wallpaper failed"
