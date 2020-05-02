@@ -1,0 +1,7 @@
+tags
+gems.tags
+files.tags
+Cargo.tags
+pkg/*
+coverage/*
+__pycache__

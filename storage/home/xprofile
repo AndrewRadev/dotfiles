@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# Wallpaper:
+$HOME/bin/set-random-wallpaper $HOME/images/wallpapers
+# $HOME/.fehbg &
+
+# Composite management:
+xcompmgr &
+
+# Keymaps:
+# (loaded by lightdm?)
+# xmodmap .Xmodmap
+
+# Keyboard repeat rate:
+xset r rate 350 30
+
+# Applications:
+(sleep 2 && skypeforlinux) &
+# pidgin &
+nm-applet &
+blueman-applet &
+# dropbox &
+kbdd
+# transmission-gtk --minimized &
+# qgmailnotifier
+
+protonmail-bridge --no-window &
+
+# Clipboard synchronization. (Problem? browser selection gets copied too. Issue when trying to paste over something)
+# autocutsel -fork &
+# autocutsel -selection PRIMARY -fork &
+
+# fix cursor theme
+xsetroot -cursor_name left_ptr&
+
+if [ -d ~/Desktop ]; then
+  rmdir ~/Desktop
+fi
+
+if [ -d ~/tmp ]; then
+  rmdir ~/tmp
+fi
