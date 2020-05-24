@@ -1,0 +1,4 @@
+10 22 * * 0 paccache --keep 2 --remove --cache /var/cache/apacman/pkg --cache /var/cache/pacman/pkg
+20 22 * * 0 /home/andrew/bin/clean-project-dirs /home/andrew/projects
+25 22 * * 0 /home/andrew/bin/clean-old-files /home/andrew/.vimundo/*
+30 22 * * 0 truncate --size 0 /home/andrew/.mpd/log
