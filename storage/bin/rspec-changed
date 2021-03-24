@@ -1,0 +1,14 @@
+#! /bin/sh
+
+files=$(git merge-base HEAD master | xargs git diff --name-only HEAD | grep "_spec\.rb$")
+if [ -z "$files" ]; then
+  echo "No tests to run"
+  exit 0
+fi
+
+echo "Running tests on:"
+for file in $files; do
+  echo "- $file"
+done
+
+echo $files | xargs bundle exec rspec --format d "$@"

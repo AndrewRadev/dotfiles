@@ -4,12 +4,16 @@
 $HOME/bin/set-random-wallpaper $HOME/images/wallpapers
 # $HOME/.fehbg &
 
+# Keyboard backlight (set based on time of day)
+$HOME/bin/keyboard-light-set
+
 # Composite management:
 xcompmgr &
 
-# Keymaps:
-# (loaded by lightdm?)
+# Keymaps and stuff:
+# (loaded by lightdm)
 # xmodmap .Xmodmap
+# xrdb -merge .Xresources
 
 # Keyboard repeat rate:
 xset r rate 350 30
@@ -19,12 +23,13 @@ xset r rate 350 30
 # pidgin &
 nm-applet &
 blueman-applet &
-# dropbox &
+# blueberry-tray &
+dropbox &
 kbdd
 # transmission-gtk --minimized &
 # qgmailnotifier
 
-protonmail-bridge --no-window &
+# protonmail-bridge --no-window &
 
 # Clipboard synchronization. (Problem? browser selection gets copied too. Issue when trying to paste over something)
 # autocutsel -fork &
@@ -33,10 +38,14 @@ protonmail-bridge --no-window &
 # fix cursor theme
 xsetroot -cursor_name left_ptr&
 
-if [ -d ~/Desktop ]; then
-  rmdir ~/Desktop
-fi
+# set up radeon video card fallback, run with:
+# DRI_PRIME=1
+xrandr --setprovideroffloadsink 1 0
 
-if [ -d ~/tmp ]; then
-  rmdir ~/tmp
-fi
+# if [ -d ~/Desktop ]; then
+#   rmdir ~/Desktop
+# fi
+#
+# if [ -d ~/tmp ]; then
+#   rmdir ~/tmp
+# fi

@@ -1,4 +1,8 @@
-keycode 135 = XF86New
-add Control = XF86New
+! keycode 135 = XF86New
+! add Control = XF86New
+! keycode 94 = Shift_L
 
-keycode 94 = Shift_L
+! "PrtSc" button can be a control key instead
+add Control = Print
+
+! Note: "Fn" is XF86WakeUp, keycode 151

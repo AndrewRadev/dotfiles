@@ -1,0 +1,17 @@
+#! /usr/bin/env ruby
+
+value = ARGV.first
+
+if value
+  system("brightnessctl --device 'tpacpi::kbd_backlight' set #{Integer(value)}")
+else
+  now = Time.now
+
+  if now.hour >= 18
+    # late in the day, enable backlight
+    system("brightnessctl --device 'tpacpi::kbd_backlight' set 1", exception: true)
+  elsif now.hour >= 7
+    # morning, disable it
+    system("brightnessctl --device 'tpacpi::kbd_backlight' set 0", exception: true)
+  end
+end

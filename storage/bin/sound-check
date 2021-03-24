@@ -1,0 +1,23 @@
+#! /usr/bin/env ruby
+
+sinks = `pactl list sinks short`.strip.split("\n").map do |line|
+  id, name, _module, _props, state = line.split("\t")
+  {
+    id:    id,
+    name:  name,
+    state: state, # RUNNING/SUSPENDED
+  }
+end
+
+sinks.each do |sink|
+  puts "[#{sink[:state]}] Sink ##{sink[:id]}: #{sink[:name]}"
+end
+
+`pactl list sink-inputs short`.strip.split("\n").map do |line|
+  id, *rest = line.split("\t")
+  puts "Sink input ##{id}: #{rest.inspect}"
+end
+
+default_sink_name = `pactl info`[/^Default Sink:\s*.*$/].
+  gsub(/^Default Sink:\s*/, '')
+puts "Default sink: #{sinks.find { |s| s[:name] == default_sink_name}[:id]} (#{default_sink_name})"

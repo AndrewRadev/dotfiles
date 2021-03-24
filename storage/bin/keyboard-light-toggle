@@ -1,0 +1,11 @@
+#! /bin/bash
+
+current_value=$(brightnessctl --device 'tpacpi::kbd_backlight' get)
+
+case $current_value in
+  0) value=1;;
+  1) value=2;;
+  2) value=0;;
+esac
+
+brightnessctl --device 'tpacpi::kbd_backlight' set $value

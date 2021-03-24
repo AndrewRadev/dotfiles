@@ -7,10 +7,11 @@ pkill -f blueberry-tray
 # pkill -f xcompmgr
 pkill -f dropbox
 pkill -f nm-applet
+pkill -f protonmail-bridge
 # sudo systemctl stop ntpd
 sudo systemctl stop postgresql
 sudo systemctl stop mysqld
-sudo systemctl stop nginx
+# sudo systemctl stop nginx
 sudo systemctl stop redis
 sudo systemctl stop NetworkManager
 

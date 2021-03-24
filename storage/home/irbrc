@@ -3,11 +3,13 @@ require 'irb/completion'
 
 IRB.conf[:SAVE_HISTORY] = 1000
 
-begin
-  require 'irbtools'
-rescue LoadError
-  puts "> Couldn't require irbtools, install the gem"
-end
+require 'bundler/inline'
+
+# gemfile do
+#   source 'https://rubygems.org'
+#   gem 'irbtools'
+#   gem 'looksee'
+# end
 
 def time
   require 'benchmark'

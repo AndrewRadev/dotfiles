@@ -1,0 +1,14 @@
+#! /bin/sh
+
+if [ $# -lt 2 ]; then
+  echo "USAGE: video-scale <input> <width:height> [<output>]"
+  exit 1
+fi
+
+input=$1
+scale=$2
+
+input_basename=${input%.*}
+output=${4:-"${input_basename}_scaled.mp4"}
+
+ffmpeg -i "$input" -filter:v scale=$scale -c:a copy "$output"

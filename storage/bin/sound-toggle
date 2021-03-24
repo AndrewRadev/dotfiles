@@ -1,0 +1,35 @@
+#! /usr/bin/env ruby
+
+sinks = `pactl list sinks short`.strip.split("\n").map do |line|
+  id, name, _module, _props, state = line.split("\t")
+  {
+    id:    id,
+    name:  name,
+    state: state, # RUNNING/SUSPENDED
+  }
+end
+
+default_sink_name = `pactl info`[/^Default Sink:\s*.*$/].
+  gsub(/^Default Sink:\s*/, '')
+default_sink_index = sinks.index { |s| s[:name] == default_sink_name }
+
+if not default_sink_index
+  puts "Couldn't find default sink (looked for '#{default_sink_name}'), activating first one"
+  target_sink = sinks.first
+else
+  target_sink = sinks[(default_sink_index + 1) % sinks.length]
+end
+
+# Move sink inputs
+`pactl list sink-inputs short`.strip.split("\n").map do |line|
+  id, *rest = line.split("\t")
+  puts "Move sink-input: #{id} -> #{target_sink[:id]}"
+  system('pactl', 'move-sink-input', id, target_sink[:id], exception: true)
+end
+
+puts "Un-suspend sink: #{target_sink[:id]}"
+system('pactl', 'suspend-sink', target_sink[:id], 'false', exception: true)
+
+# Set it as default
+puts "New default sink: #{target_sink[:id]}"
+system('pactl', 'set-default-sink', target_sink[:id], exception: true)

@@ -1,0 +1,11 @@
+#! /usr/bin/env ruby
+
+require 'bundler/setup'
+require 'rspec/core'
+
+runner = RSpec::Core::Runner.new(RSpec::Core::ConfigurationOptions.new(['spec']))
+runner.setup($stderr, $stdout)
+
+runner.world.all_examples.each do |e|
+  puts [e.id, e.location].inspect
+end

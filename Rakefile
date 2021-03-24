@@ -3,6 +3,7 @@ def file_mapping(root = getwd)
 
   [
     ['~/.Xdefaults',                          'home/Xdefaults'],
+    ['~/.Xresources',                         'home/Xresources'],
     ['~/.Xmodmap',                            'home/Xmodmap'],
     ['~/.xinitrc',                            'home/xinitrc'],
     ['~/.xprofile',                           'home/xprofile'],
