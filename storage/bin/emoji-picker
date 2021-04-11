@@ -6,3 +6,6 @@ rofi -modi emoji -show emoji -font 'Cantarell 20'
 
 # bin/copy-from-clipboard:
 xsel -b | xsel -i
+
+# bin/copy-to-clipboard:
+xsel -o | xsel -ib
