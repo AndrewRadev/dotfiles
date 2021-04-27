@@ -13,10 +13,11 @@
   safecrlf     = warn
   eol          = lf
 [alias]
-  delete-branch  = "!bash -c \"[[ $# = 1 ]] && git push origin :$1; git branch -d $1 || echo Missing argument: remote branch name\""
+  delete-branch  = "!bash -c \"[[ $# = 1 ]] && git push origin :$1; git branch -D $1 || echo Missing argument: remote branch name\""
   rm-orig        = "!bash -c \"git ls-files -z --others --exclude-standard **/*.orig *.orig | xargs -0 rm\""
   list-untracked = !git status -s | cut -d' ' -f 2
   up             = pull --rebase --autostash
+  wip            = for-each-ref --sort='-authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
 
   # TODO: remove if `hub pr checkout` works well enough or better
   checkout-pr    = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr"
@@ -47,3 +48,5 @@
   noprefix = true
 [init]
   defaultBranch = main
+[maintenance]
+  repo = /home/andrew/.vim
